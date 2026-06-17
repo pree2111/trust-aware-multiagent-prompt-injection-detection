@@ -41,5 +41,3 @@ for i, (_, row) in enumerate(df.iterrows()):
     predictions.append(
         result["vote"]
     )
-
-print(predictions[33])
