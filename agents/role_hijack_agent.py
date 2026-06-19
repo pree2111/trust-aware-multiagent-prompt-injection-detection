@@ -37,7 +37,7 @@ Return ONLY valid JSON:
 }
 """
 
-DEBUG = True
+DEBUG = False
 
 
 def extract_json(text):
