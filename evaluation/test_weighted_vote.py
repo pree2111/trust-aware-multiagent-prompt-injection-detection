@@ -17,7 +17,7 @@ trust_manager = TrustManager()
 
 trust_manager.trust["semantic"] = 0.8
 trust_manager.trust["override"] = 0.7
-trust_manager.trust["leakage"] = 0.9
+trust_manager.trust["leakage"] = 0.7
 trust_manager.trust["role_hijack"] = 0.5
 trust_manager.trust["benign_validator"] = 0.6
 
