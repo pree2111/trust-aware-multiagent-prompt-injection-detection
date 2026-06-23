@@ -17,7 +17,7 @@ from coalition.shapley import (
 )
 
 df = pd.read_csv(
-    "results/results.csv"
+    "results/qwen2.5_3b/results.csv"
 )
 
 calculator = (
@@ -60,7 +60,7 @@ shapley_df = pd.DataFrame(
 )
 
 shapley_df.to_csv(
-    "results/shapley_values.csv",
+    "results/qwen2.5_3b/shapley_values.csv",
     index=False
 )
 

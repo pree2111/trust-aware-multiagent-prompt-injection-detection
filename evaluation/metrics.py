@@ -10,7 +10,7 @@ from sklearn.metrics import (
 )
 
 df = pd.read_csv(
-    "results/results.csv"
+    "results/qwen2.5_3b/results.csv"
 )
 
 y_true = df["label"]
@@ -80,7 +80,7 @@ errors = df[
 ]
 
 errors.to_csv(
-    "results/errors.csv",
+    "results/qwen2.5_3b/errors.csv",
     index=False
 )
 
