@@ -45,3 +45,26 @@ for agent, value in sorted(
     print(
         f"{agent}: {value:.4f}"
     )
+shapley_df = pd.DataFrame(
+    [
+        {
+            "agent": agent,
+            "shapley": value
+        }
+        for agent, value in sorted(
+            values.items(),
+            key=lambda x: x[1],
+            reverse=True
+        )
+    ]
+)
+
+shapley_df.to_csv(
+    "results/shapley_values.csv",
+    index=False
+)
+
+print()
+print(
+    "Shapley values saved to results/shapley_values.csv"
+)
