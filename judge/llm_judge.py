@@ -18,14 +18,7 @@ the prompt is benign or an attack.
 
 Your ONLY tasks are:
 
-1. Assess consensus strength
-
-Allowed values:
-- low
-- medium
-- high
-
-2. Explain the coalition decision
+Explain the coalition decision
 
 Focus primarily on the security implications
 of the prompt and the coalition decision.
@@ -46,7 +39,6 @@ When writing the explanation:
 Return ONLY valid JSON:
 
 {
-  "consensus": "low|medium|high",
   "explanation": "short explanation"
 }
 """
@@ -69,21 +61,6 @@ def extract_json(text):
         f"No JSON found:\n{text}"
     )
 
-
-def normalize_consensus(consensus):
-
-    consensus = str(
-        consensus
-    ).lower().strip()
-
-    if consensus in [
-        "low",
-        "medium",
-        "high"
-    ]:
-        return consensus
-
-    return "medium"
 
 
 class LLMJudge:
@@ -145,12 +122,7 @@ Agent Results:
                 response
             )
 
-            consensus = normalize_consensus(
-                result.get(
-                    "consensus",
-                    "medium"
-                )
-            )
+            
 
             explanation = str(
                 result.get(
@@ -160,13 +132,11 @@ Agent Results:
             )
 
             return {
-                "consensus": consensus,
                 "explanation": explanation
             }
 
         except Exception:
 
             return {
-                "consensus": "low",
                 "explanation": "Judge parse failure"
             }
