@@ -1,10 +1,120 @@
 # Virtual environment
 .venv/
+# =========================
+# Environment & Secrets
+# =========================
+.env
+.env.*
+*.env
 
-# Python cache
+# Secret files
+secrets.json
+credentials.json
+config.local.json
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+*.pyd
+
+# =========================
+# Virtual Environments
+# =========================
+.venv/
+venv/
+env/
+ENV/
+
+# =========================
+# Distribution / Packaging
+# =========================
+build/
+dist/
+*.egg-info/
+.eggs/
+pip-wheel-metadata/
+
+# =========================
+# Testing
+# =========================
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# =========================
+# Jupyter
+# =========================
+.ipynb_checkpoints/
+
+# =========================
+# Type Checkers
+# =========================
+.mypy_cache/
+.pyre/
+.pytype/
+
+# =========================
+# Linting
+# =========================
+.ruff_cache/
+
+# =========================
+# IDEs
+# =========================
+.vscode/
+.idea/
+
+# =========================
+# Operating System
+# =========================
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# =========================
+# Logs
+# =========================
+*.log
+logs/
+
+# =========================
+# Temporary Files
+# =========================
+*.tmp
+*.temp
+*.bak
+*.swp
+
+#model files
+*.pt
+*.pth
+*.ckpt
+models/
+
+
+data/
+datasets/
+
+outputs/
+results/
+reports/
+Python cache
 __pycache__/
 *.pyc
-
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
 # Jupyter
 .ipynb_checkpoints/
 
@@ -13,6 +123,22 @@ results/
 
 # VS Code
 .vscode/
+# Virtual environments
+.venv/
+venv/
+env/
 
-#data
-data/data_generation.ipynb
+# IDE
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+#configs
+configs/
+
