@@ -129,9 +129,6 @@ def main():
     for column in trust_columns:
         print(f"{column:<28}{final[column]:.4f}")
 
-    # -----------------------------
-    # Save evaluation report
-    # -----------------------------
 
     report_file = "results/qwen3_4b/4b_evaluation_report.txt"
 
@@ -170,9 +167,6 @@ def main():
         for column in trust_columns:
             f.write(f"{column:<28}{final[column]:.4f}\n")
 
-    # -----------------------------
-    # Save metrics CSV
-    # -----------------------------
 
     metrics = pd.DataFrame([
         {
