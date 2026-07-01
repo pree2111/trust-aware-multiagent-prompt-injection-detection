@@ -12,7 +12,7 @@ sys.path.append(
 
 import pandas as pd
 
-from models.ollama_client import OllamaClient
+from models.api_client import APIClient
 
 from agents.semantic_agent import SemanticRiskDetector
 from agents.override_agent import OverrideDetector
@@ -28,7 +28,7 @@ df = pd.read_csv(
     "data/prompt_injection_dataset.csv"
 )
 
-llm = OllamaClient()
+llm = APIClient()
 
 semantic = SemanticRiskDetector(llm)
 override = OverrideDetector(llm)
@@ -205,7 +205,7 @@ results_df = pd.DataFrame(
 )
 
 results_df.to_csv(
-    "results/qwen2.5_3b/results.csv",
+    "results/qwen3_4b/results.csv",
     index=False
 )
 

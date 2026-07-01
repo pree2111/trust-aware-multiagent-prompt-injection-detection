@@ -9,9 +9,9 @@ sys.path.append(
         )
     )
 )
-from models.ollama_client import OllamaClient
+from models.api_client import APIClient
 from agents.semantic_agent import SemanticRiskDetector
-llm = OllamaClient()
+llm = APIClient()
 
 agent = SemanticRiskDetector(llm)
 
