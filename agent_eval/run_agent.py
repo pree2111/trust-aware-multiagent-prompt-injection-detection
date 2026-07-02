@@ -53,15 +53,13 @@ def main():
     )
 
     os.makedirs(
-        "results/agents",
+        "results/agents/qwen35_35b",
         exist_ok=True
     )
 
-    output_path = f"results/agents/{prefix}.csv"
+    output_path = f"results/agents/qwen35_35b/{prefix}.csv"
 
-    # -----------------------------
-    # Resume previous run if present
-    # -----------------------------
+
 
     if os.path.exists(output_path):
 
@@ -81,9 +79,6 @@ def main():
 
     total = len(df)
 
-    # -----------------------------
-    # Main inference loop
-    # -----------------------------
 
     for i, row in enumerate(
         df.iloc[start:].itertuples(index=False),
@@ -125,7 +120,6 @@ def main():
             }
         )
 
-        # Save after every prompt
 
         pd.DataFrame(results).to_csv(
             output_path,
