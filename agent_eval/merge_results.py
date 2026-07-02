@@ -2,7 +2,7 @@ import os
 import pandas as pd
 
 
-RESULTS_DIR = "results/agents"
+RESULTS_DIR = "results/agents/qwen35_35b"
 
 FILES = {
     "semantic": "semantic.csv",
@@ -51,7 +51,7 @@ def main():
             how="inner"
         )
 
-    output_path = "results/merged_results.csv"
+    output_path = "results/qwen35_35b/merged_results.csv"
 
     merged.to_csv(
         output_path,

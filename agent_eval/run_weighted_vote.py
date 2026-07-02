@@ -16,8 +16,8 @@ from trust.trust_manager import TrustManager
 from coalition.weighted_vote import WeightedVote
 
 
-INPUT_FILE = "results/merged_results.csv"
-OUTPUT_FILE = "results/weighted_vote_results.csv"
+INPUT_FILE = "results/qwen35_35b/merged_results.csv"
+OUTPUT_FILE = "results/qwen35_35b/weighted_vote_results.csv"
 
 
 def main():
@@ -84,7 +84,6 @@ def main():
             prediction == row["label"]
         )
 
-        # Update trust scores
 
         for agent in agent_results:
 
