@@ -53,11 +53,11 @@ def main():
     )
 
     os.makedirs(
-        "results/agents/qwen35_122b",
+        "results/agents/qwen35_35b_moe",
         exist_ok=True
     )
 
-    output_path = f"results/agents/qwen35_122b/{prefix}.csv"
+    output_path = f"results/agents/qwen35_35b_moe/{prefix}.csv"
 
 
 
