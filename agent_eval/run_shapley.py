@@ -15,8 +15,8 @@ sys.path.append(
 from coalition.shapley import Shapley
 
 
-INPUT_FILE = "results/qwen35_35b/merged_results.csv"
-OUTPUT_FILE = "results/qwen35_35b/shapley_values.csv"
+INPUT_FILE = "results/qwen35_122b/merged_results.csv"
+OUTPUT_FILE = "results/qwen35_122b/shapley_values.csv"
 
 
 def main():
