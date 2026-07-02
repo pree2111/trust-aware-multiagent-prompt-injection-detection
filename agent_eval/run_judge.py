@@ -16,9 +16,9 @@ from models.api_client import APIClient
 from judge.llm_judge import LLMJudge
 
 
-WEIGHTED_FILE = "results/qwen35_35b/weighted_vote_results.csv"
-MERGED_FILE = "results/qwen35_35b/merged_results.csv"
-OUTPUT_FILE = "results/qwen35_35b/final_results.csv"
+WEIGHTED_FILE = "results/qwen35_122b/weighted_vote_results.csv"
+MERGED_FILE = "results/qwen35_122b/merged_results.csv"
+OUTPUT_FILE = "results/qwen35_122b/final_results.csv"
 
 
 def main():
