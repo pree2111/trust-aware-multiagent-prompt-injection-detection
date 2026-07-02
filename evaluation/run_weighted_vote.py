@@ -205,7 +205,7 @@ results_df = pd.DataFrame(
 )
 
 results_df.to_csv(
-    "results/qwen3_4b/results.csv",
+    "results/qwen35_4b/results.csv",
     index=False
 )
 
