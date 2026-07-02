@@ -48,7 +48,7 @@ def main():
 
     detector = detector_class(llm)
 
-    output_path = f"results/agents/qwen35_35b/{prefix}.csv"
+    output_path = f"results/agents/qwen35_122b/{prefix}.csv"
 
     if not os.path.exists(output_path):
         print(f"{output_path} not found.")
