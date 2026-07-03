@@ -105,16 +105,19 @@ class SemanticRiskDetector:
     def __init__(self, llm):
         self.llm = llm
 
-    def analyze(self, prompt):
+    def analyze(
+        self,
+        prompt,
+        row_id
+    ):
 
-        full_prompt = f"""
-{SYSTEM_PROMPT}
 
-User Prompt:
-{prompt}
-"""
-
-        response = self.llm.ask(full_prompt)
+        response = self.llm.ask(
+            prompt=prompt,
+            context=SYSTEM_PROMPT,
+            agent="semantic",
+            row_id=row_id
+        )
 
         if DEBUG:
             print("RAW RESPONSE:")

@@ -73,17 +73,17 @@ class LeakageDetector:
     def __init__(self, llm):
         self.llm = llm
 
-    def analyze(self, prompt):
-
-        full_prompt = f"""
-{SYSTEM_PROMPT}
-
-User Prompt:
-{prompt}
-"""
+    def analyze(
+        self,
+        prompt,
+        row_id
+    ):
 
         response = self.llm.ask(
-            full_prompt
+            prompt=prompt,
+            context=SYSTEM_PROMPT,
+            agent="leakage",
+            row_id=row_id
         )
 
         if DEBUG:
