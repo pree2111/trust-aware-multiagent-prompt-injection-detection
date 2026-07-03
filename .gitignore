@@ -124,6 +124,12 @@ results/
 #plots
 plots/
 
+#logs
+logs/
+
+#utils
+utils/
+
 # VS Code
 .vscode/
 # Virtual environments
