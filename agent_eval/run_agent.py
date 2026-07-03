@@ -50,14 +50,14 @@ def main():
 
     df = pd.read_csv(
         "data/prompt_injection_dataset.csv"
-    )
+    ).head(1)
 
     os.makedirs(
-        "results/agents/qwen35_35b_moe",
+        "results/agents/test/qwen35_122b_moe",
         exist_ok=True
     )
 
-    output_path = f"results/agents/qwen35_35b_moe/{prefix}.csv"
+    output_path = f"results/agents/test/qwen35_122b_moe/{prefix}.csv"
 
 
 
@@ -90,7 +90,8 @@ def main():
         try:
 
             result = detector.analyze(
-                row.prompt
+                prompt=row.prompt,
+                row_id=i
             )
 
         except Exception as e:
