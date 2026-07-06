@@ -23,7 +23,7 @@ sys.path.append(
 )
 
 
-INPUT_FILE = "results/qwen35_35b_moe/final_results.csv"
+INPUT_FILE = "results/qwen35_122b_moe/final_results.csv"
 
 
 def main():
@@ -130,7 +130,7 @@ def main():
         print(f"{column:<28}{final[column]:.4f}")
 
 
-    report_file = "results/qwen35_35b_moe/35b_moe_evaluation_report.txt"
+    report_file = "results/qwen35_122b_moe/122b_moe_evaluation_report.txt"
 
     with open(report_file, "w", encoding="utf-8") as f:
 
@@ -178,12 +178,12 @@ def main():
     ])
 
     metrics.to_csv(
-    "results/qwen35_35b_moe/evaluation_metrics.csv",
+    "results/qwen35_122b_moe/evaluation_metrics.csv",
     index=False
 )
 
     print(f"\nSaved evaluation report to {report_file}")
-    print("Saved metrics to results/qwen35_35b_moe/evaluation_metrics.csv")
+    print("Saved metrics to results/qwen35_122b_moe/evaluation_metrics.csv")
 
 
 if __name__ == "__main__":

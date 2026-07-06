@@ -54,9 +54,32 @@ def main():
 
     total = len(df)
 
-    explanations = []
 
-    for _, row in df.iterrows():
+    if os.path.exists(OUTPUT_FILE):
+
+        existing = pd.read_csv(
+            OUTPUT_FILE
+        )
+
+        explanations = existing[
+            "judge_explanation"
+        ].tolist()
+
+        start = len(existing)
+
+        print(
+            f"Resuming from row {start + 1}"
+        )
+
+    else:
+
+        explanations = []
+
+        start = 0
+
+    
+
+    for _, row in df.iloc[start:].iterrows():
 
         print(
             f"Judging {row['id'] + 1}/{total}"
@@ -115,23 +138,40 @@ def main():
 
         ]
 
-        result = judge.evaluate(
-            prompt=row["prompt"],
-            coalition_result=coalition_result,
-            agent_results=agent_results,
-            row_id=int(row["id"])
+        try:
+
+            result = judge.evaluate(
+                prompt=row["prompt"],
+                coalition_result=coalition_result,
+                agent_results=agent_results,
+                row_id=int(row["id"])
+            )
+
+            explanations.append(
+                result["explanation"]
+            )
+
+        except Exception as e:
+
+            print(
+                f"ERROR on row {row['id'] + 1}: {e}"
+            )
+
+            explanations.append(
+                "Judge Error"
+            )
+
+
+        current = df.iloc[
+            :len(explanations)
+        ].copy()
+
+        current["judge_explanation"] = explanations
+
+        current.to_csv(
+            OUTPUT_FILE,
+            index=False
         )
-
-        explanations.append(
-            result["explanation"]
-        )
-
-    df["judge_explanation"] = explanations
-
-    df.to_csv(
-        OUTPUT_FILE,
-        index=False
-    )
 
     print()
 
