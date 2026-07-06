@@ -48,7 +48,7 @@ def main():
 
     detector = detector_class(llm)
 
-    output_path = f"results/agents/qwen35_35b_moe/{prefix}.csv"
+    output_path = f"results/agents/qwen35_122b_moe/{prefix}.csv"
 
     if not os.path.exists(output_path):
         print(f"{output_path} not found.")
@@ -75,7 +75,8 @@ def main():
         try:
 
             result = detector.analyze(
-                row["prompt"]
+                row["prompt"],
+                int(row["id"])
             )
 
             df.loc[index, f"{prefix}_vote"] = result["vote"]
