@@ -16,9 +16,9 @@ from models.api_client import APIClient
 from judge.llm_judge import LLMJudge
 
 
-WEIGHTED_FILE = "results/qwen35_35b_moe/weighted_vote_results.csv"
-MERGED_FILE = "results/qwen35_35b_moe/merged_results.csv"
-OUTPUT_FILE = "results/qwen35_35b_moe/final_results.csv"
+WEIGHTED_FILE = "results/qwen35_122b_moe/weighted_vote_results.csv"
+MERGED_FILE = "results/qwen35_122b_moe/merged_results.csv"
+OUTPUT_FILE = "results/qwen35_122b_moe/final_results.csv"
 
 
 def main():
@@ -116,9 +116,10 @@ def main():
         ]
 
         result = judge.evaluate(
-            row["prompt"],
-            coalition_result,
-            agent_results
+            prompt=row["prompt"],
+            coalition_result=coalition_result,
+            agent_results=agent_results,
+            row_id=int(row["id"])
         )
 
         explanations.append(

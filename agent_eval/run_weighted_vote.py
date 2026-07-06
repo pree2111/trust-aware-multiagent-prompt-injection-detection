@@ -16,8 +16,8 @@ from trust.trust_manager import TrustManager
 from coalition.weighted_vote import WeightedVote
 
 
-INPUT_FILE = "results/qwen35_35b_moe/merged_results.csv"
-OUTPUT_FILE = "results/qwen35_35b_moe/weighted_vote_results.csv"
+INPUT_FILE = "results/qwen35_122b_moe/merged_results.csv"
+OUTPUT_FILE = "results/qwen35_122b_moe/weighted_vote_results.csv"
 
 
 def main():

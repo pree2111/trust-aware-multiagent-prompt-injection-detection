@@ -70,7 +70,8 @@ class LLMJudge:
         self,
         prompt,
         coalition_result,
-        agent_results
+        agent_results,
+        row_id
     ):
 
         judge_prompt = f"""
@@ -96,7 +97,10 @@ Agent Results:
 """
 
         response = self.llm.ask(
-            judge_prompt
+            prompt=judge_prompt,
+            context=SYSTEM_PROMPT,
+            agent="judge",
+            row_id=row_id
         )
 
         if DEBUG:
