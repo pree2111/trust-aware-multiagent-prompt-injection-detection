@@ -149,4 +149,4 @@ class WeightedVote:
 
     "agent_details":
         detailed_results
-}
+} 
